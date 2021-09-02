@@ -240,6 +240,7 @@ namespace PyCarpinteria.presentacion
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "S&alir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmConsultarPresupuestos
             // 
@@ -252,6 +253,7 @@ namespace PyCarpinteria.presentacion
             this.Controls.Add(this.gbResultados);
             this.Controls.Add(this.gbFiltros);
             this.Name = "FrmConsultarPresupuestos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Consultar presupuestos";
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();

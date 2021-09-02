@@ -49,7 +49,12 @@ namespace PyCarpinteria
 
         private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FrmReporte().ShowDialog();
         }
     }
 }
