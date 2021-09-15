@@ -53,7 +53,7 @@ namespace PyCarpinteria.presentacion
                                         table.Rows[i]["presupuesto_nro"],
                                         table.Rows[i]["fecha"],
                                         table.Rows[i]["cliente"],
-                                        table.Rows[i]["descuento"],                                 
+                                        table.Rows[i]["descuento"],
                                         table.Rows[i]["total"],
                                         table.Rows[i]["fecha_baja"]
                  });
@@ -68,5 +68,48 @@ namespace PyCarpinteria.presentacion
         {
             this.Close();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgvResultados.CurrentRow;
+            if (row != null)
+            {
+                int presupuesto = Int32.Parse(row.Cells["colNro"].Value.ToString());
+                if (MessageBox.Show("Seguro que desea eliminar el presupuesto seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    SqlConnection cnn = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = db_carpinteria; Integrated Security = True");
+                    SqlTransaction t = null;
+                    int affected = 0;
+                    try
+                    {
+                        cnn.Open();
+                        t = cnn.BeginTransaction();
+                        SqlCommand cmd = new SqlCommand("SP_REGISTRAR_BAJA_PRESUPUESTOS", cnn, t);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@presupuesto_nro", presupuesto);
+                        affected = cmd.ExecuteNonQuery();
+                        t.Commit();
+                    }
+                    catch (SqlException ex)
+                    {
+                        t.Rollback();
+
+                    }
+                    finally
+                    {
+                        if (cnn != null && cnn.State == ConnectionState.Open)
+                            cnn.Close();
+                    }
+
+                    if (affected == 1) { 
+                        MessageBox.Show("Presupuesto eliminado!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.btnConsultar_Click(sender, e);
+                    }
+                    else
+                        MessageBox.Show("Error al intentar borrar el presupuesto!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
+

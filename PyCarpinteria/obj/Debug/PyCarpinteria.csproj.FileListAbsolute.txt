@@ -117,3 +117,4 @@ C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria
 C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\RdlCompile.cache
 C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\RdlCompile.compiled
 C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.CopyComplete
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.AssemblyReference.cache
