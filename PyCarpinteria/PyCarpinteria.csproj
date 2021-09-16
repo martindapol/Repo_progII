@@ -65,6 +65,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acceso a datos\Implementaciones\PresupuestoDao.cs" />
+    <Compile Include="acceso a datos\Interfaces\IPresupuestoDao.cs" />
     <Compile Include="dominio\DetallePresupuesto.cs" />
     <Compile Include="dominio\Presupuesto.cs" />
     <Compile Include="dominio\Producto.cs" />
@@ -99,6 +101,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="servicios\IService.cs" />
+    <Compile Include="servicios\PresupuestoService.cs" />
+    <Compile Include="servicios\AbstractServiceFactory.cs" />
+    <Compile Include="servicios\ServiceFactoryImp.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="presentacion\FrmConsultarPresupuestos.resx">
       <DependentUpon>FrmConsultarPresupuestos.cs</DependentUpon>
@@ -162,5 +168,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

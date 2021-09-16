@@ -166,6 +166,7 @@ namespace PyCarpinteria.presentacion
             this.dgvResultados.Location = new System.Drawing.Point(6, 19);
             this.dgvResultados.Name = "dgvResultados";
             this.dgvResultados.ReadOnly = true;
+            this.dgvResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultados.Size = new System.Drawing.Size(518, 132);
             this.dgvResultados.TabIndex = 0;
             // 
