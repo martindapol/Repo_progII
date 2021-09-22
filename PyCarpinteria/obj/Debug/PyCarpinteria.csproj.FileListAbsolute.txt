@@ -117,3 +117,4 @@ C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria
 C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.CopyComplete
 C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.exe
 C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.pdb
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.AssemblyReference.cache

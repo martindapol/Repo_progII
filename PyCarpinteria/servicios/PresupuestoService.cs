@@ -1,5 +1,6 @@
 ﻿using PyCarpinteria.acceso_a_datos.Implementaciones;
 using PyCarpinteria.acceso_a_datos.Interfaces;
+using PyCarpinteria.dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,10 @@ namespace PyCarpinteria.servicios
         {
             dao = new PresupuestoDao();
         }
+
+        public List<Presupuesto> ConsultarPresupuestos(List<Parametro> criterios)
+        {
+            return dao.GetByFilters(criterios);        }
 
         public bool RegistrarBajaPresupuesto(int presupuesto)
         {

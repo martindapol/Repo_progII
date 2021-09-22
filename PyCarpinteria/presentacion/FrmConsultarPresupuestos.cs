@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using PyCarpinteria.servicios;
+using PyCarpinteria.dominio;
 
 namespace PyCarpinteria.presentacion
 {
-    
+
     public partial class FrmConsultarPresupuestos : Form
     {
         private IService servicio;
-     
+
         public FrmConsultarPresupuestos()
         {
             InitializeComponent();
@@ -25,45 +26,38 @@ namespace PyCarpinteria.presentacion
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            //Validar los filtros fecha desde <= fecha hasta
-            SqlConnection cnn = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = db_carpinteria; Integrated Security = True");
+            List<Parametro> filtros = new List<Parametro>();
+            Parametro fecha_desde = new Parametro();
+            fecha_desde.Nombre = "@fecha_desde";
+            fecha_desde.Valor = dtpDesde.Value;
+            filtros.Add(fecha_desde);
+            filtros.Add(new Parametro("@fecha_hasta", dtpHasta.Value));
 
-            DataTable table = new DataTable();
-            cnn.Open();
+            object val = DBNull.Value;
+            if (!String.IsNullOrEmpty(txtCliente.Text))
+                val = txtCliente.Text;
+            filtros.Add(new Parametro("@cliente", val));
 
-            SqlCommand cmd = new SqlCommand("SP_CONSULTAR_PRESUPUESTOS", cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@fecha_desde", dtpDesde.Value);
-            cmd.Parameters.AddWithValue("@fecha_hasta", dtpHasta.Value);
-
-            if (String.IsNullOrEmpty(txtCliente.Text))
-                cmd.Parameters.AddWithValue("@cliente", DBNull.Value);
-            else
-                cmd.Parameters.AddWithValue("@cliente", txtCliente.Text);
-
+            string conBaja = "N";
             if (chkBaja.Checked)
-                cmd.Parameters.AddWithValue("@datos_baja", "S");
-            else
-                cmd.Parameters.AddWithValue("@datos_baja", "N");
-
-            table.Load(cmd.ExecuteReader());
-            cnn.Close();
+                conBaja = "S";
+            filtros.Add(new Parametro("@datos_baja", conBaja));
+            List<Presupuesto> lst = servicio.ConsultarPresupuestos(filtros);
 
             dgvResultados.Rows.Clear();
-            for (int i = 0; i < table.Rows.Count; i++)
+            foreach (Presupuesto oPresupuesto in lst)
             {
                 dgvResultados.Rows.Add(new object[]{
-                                        table.Rows[i]["presupuesto_nro"],
-                                        table.Rows[i]["fecha"],
-                                        table.Rows[i]["cliente"],
-                                        table.Rows[i]["descuento"],
-                                        table.Rows[i]["total"],
-                                        table.Rows[i]["fecha_baja"]
+                                        oPresupuesto.PresupuestoNro,
+                                        oPresupuesto.Fecha,
+                                        oPresupuesto.Cliente,
+                                        oPresupuesto.Descuento,
+                                        oPresupuesto.Total,
+                                        oPresupuesto.FechaBaja
                  });
             }
 
-            //dgvResultados.DataSource = table;
+
 
 
         }
@@ -83,7 +77,8 @@ namespace PyCarpinteria.presentacion
                 {
                     bool respuesta = servicio.RegistrarBajaPresupuesto(presupuesto);
 
-                    if (respuesta) { 
+                    if (respuesta)
+                    {
                         MessageBox.Show("Presupuesto eliminado!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.btnConsultar_Click(null, null);
                     }

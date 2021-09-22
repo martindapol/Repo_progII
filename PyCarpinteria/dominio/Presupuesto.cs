@@ -92,8 +92,7 @@ namespace PyCarpinteria.dominio
                 }
 
                 transaccion.Commit();
-
-                
+              
             } catch
             {
                 transaccion.Rollback();

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PyCarpinteria.servicios
 {
-    public abstract class AbstractServiceFactory
+     abstract class AbstractServiceFactory
     {
-        public abstract IService CrearService();
+         public abstract IService CrearService();
     }
 }
