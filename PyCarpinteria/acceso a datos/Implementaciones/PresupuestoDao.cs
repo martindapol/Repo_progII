@@ -72,7 +72,7 @@ namespace PyCarpinteria.acceso_a_datos.Implementaciones
                     oPresupuesto.Descuento = Convert.ToDouble(row["descuento"].ToString());
                     oPresupuesto.PresupuestoNro = Convert.ToInt32(row["presupuesto_nro"].ToString());
                     oPresupuesto.Total = Convert.ToDouble(row["total"].ToString());
-                    oPresupuesto.FechaBaja = Convert.ToDateTime(row["fecha_baja"].ToString());
+
                     lst.Add(oPresupuesto);
                 }
 
@@ -80,10 +80,97 @@ namespace PyCarpinteria.acceso_a_datos.Implementaciones
 
             }
             catch (SqlException ex) {
-                string mensaje = ex.Message;
-            
+               
             }
             return lst;
+        }
+
+        public List<Producto> GetProductos()
+        {
+            List<Producto> lst = new List<Producto>();
+            SqlConnection cnn = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = db_carpinteria; Integrated Security = True");
+            cnn.Open();
+            SqlCommand cmd2 = new SqlCommand("SP_CONSULTAR_PRODUCTOS", cnn);
+
+            cmd2.CommandType = CommandType.StoredProcedure;
+
+            DataTable table = new DataTable();
+            table.Load(cmd2.ExecuteReader());
+
+            cnn.Close();
+
+            foreach(DataRow row in table.Rows)
+            {
+                Producto oProducto = new Producto();
+                oProducto.IdProducto = Convert.ToInt32(row["id_producto"].ToString());
+                oProducto.Nombre = row["n_producto"].ToString();
+                oProducto.Precio = Convert.ToDouble(row["precio"].ToString());
+                oProducto.Activo = row["activo"].ToString().Equals("S");
+
+                lst.Add(oProducto);
+            }
+
+            return lst;
+        }
+
+        public bool Save(Presupuesto oPresupuesto)
+        {
+            SqlTransaction transaccion = null;
+            SqlConnection cnn = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = db_carpinteria; Integrated Security = True");
+
+            bool flag = true;
+            try
+            {
+                cnn.Open();
+                transaccion = cnn.BeginTransaction();
+
+                SqlCommand cmdMaestro = new SqlCommand("SP_INSERTAR_MAESTRO", cnn, transaccion);
+                cmdMaestro.CommandType = CommandType.StoredProcedure;
+                cmdMaestro.Parameters.AddWithValue("@cliente", oPresupuesto.Cliente);
+                cmdMaestro.Parameters.AddWithValue("@dto", oPresupuesto.Descuento);
+                cmdMaestro.Parameters.AddWithValue("@total", oPresupuesto.Total);
+
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "@presupuesto_nro";
+                param.SqlDbType = SqlDbType.Int;
+
+                param.Direction = ParameterDirection.Output;
+                cmdMaestro.Parameters.Add(param);
+                cmdMaestro.ExecuteNonQuery();
+
+                int nroPresupuesto = (int)param.Value;
+                int nroDetalle = 0;
+
+                foreach (DetallePresupuesto det in oPresupuesto.Detalles)
+                {
+                    SqlCommand cmd = new SqlCommand("SP_INSERTAR_DETALLE", cnn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Transaction = transaccion;
+                    cmd.Parameters.AddWithValue("@id_producto", det.Producto.IdProducto);
+                    cmd.Parameters.AddWithValue("@cantidad ", det.Cantidad);
+                    cmd.Parameters.AddWithValue("@presupuesto_nro", nroPresupuesto);
+                    cmd.Parameters.AddWithValue("@detalle", ++nroDetalle);
+                    cmd.ExecuteNonQuery();
+                }
+
+                transaccion.Commit();
+
+            }
+            catch
+            {
+                transaccion.Rollback();
+                flag = false;
+
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+
+            }
+
+            return flag;
+
         }
     }
 }

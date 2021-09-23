@@ -11,6 +11,8 @@ namespace PyCarpinteria.servicios
     {
         bool RegistrarBajaPresupuesto(int presupuesto);
         List<Presupuesto> ConsultarPresupuestos(List<Parametro> criterios);
+        List<Producto> ConsultarProductos();
+        bool GrabarPresupuesto(Presupuesto oPresupuesto);
 
     }
 }

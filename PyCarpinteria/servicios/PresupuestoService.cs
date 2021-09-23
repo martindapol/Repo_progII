@@ -22,9 +22,22 @@ namespace PyCarpinteria.servicios
         {
             return dao.GetByFilters(criterios);        }
 
+        public List<Producto> ConsultarProductos()
+        {
+            return dao.GetProductos();
+        }
+
+        public bool GrabarPresupuesto(Presupuesto oPresupuesto)
+        {
+            return  dao.Save(oPresupuesto);
+        }
+
         public bool RegistrarBajaPresupuesto(int presupuesto)
         {
             return dao.Delete(presupuesto);
         }
+
+
+        
     }
 }

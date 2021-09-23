@@ -87,6 +87,11 @@ namespace PyCarpinteria.presentacion
                 }
             }
         }
+
+        private void FrmConsultarPresupuestos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

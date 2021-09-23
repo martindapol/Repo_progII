@@ -257,6 +257,7 @@ namespace PyCarpinteria.presentacion
             this.Name = "FrmConsultarPresupuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Consultar presupuestos";
+            this.Load += new System.EventHandler(this.FrmConsultarPresupuestos_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();
             this.gbResultados.ResumeLayout(false);

@@ -12,5 +12,7 @@ namespace PyCarpinteria.acceso_a_datos.Interfaces
     {
         bool Delete(int nro);
         List<Presupuesto> GetByFilters(List<Parametro> criterios);
+        List<Producto> GetProductos();
+        bool Save(Presupuesto oPresupuesto);
     }
 }
