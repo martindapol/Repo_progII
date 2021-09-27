@@ -15,7 +15,7 @@ namespace PyCarpinteria.servicios
 
         public PresupuestoService()
         {
-            dao = new PresupuestoDao();
+            dao = new PresupuestoDao(); //acá también podríamos tener una fábrica para crear el DAO.
         }
 
         public List<Presupuesto> ConsultarPresupuestos(List<Parametro> criterios)
@@ -30,6 +30,16 @@ namespace PyCarpinteria.servicios
         public bool GrabarPresupuesto(Presupuesto oPresupuesto)
         {
             return  dao.Save(oPresupuesto);
+        }
+
+        public Presupuesto ObtenerPresupuestoPorID(int nro)
+        {
+            return dao.GetById(nro);
+        }
+
+        public int ObtenerProximoPresupuestoID()
+        {
+            return dao.GetNextPresupuestoId();
         }
 
         public bool RegistrarBajaPresupuesto(int presupuesto)

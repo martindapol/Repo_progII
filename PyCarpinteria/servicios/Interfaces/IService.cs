@@ -14,5 +14,8 @@ namespace PyCarpinteria.servicios
         List<Producto> ConsultarProductos();
         bool GrabarPresupuesto(Presupuesto oPresupuesto);
 
+        int ObtenerProximoPresupuestoID();
+        Presupuesto ObtenerPresupuestoPorID(int nro);
+
     }
 }

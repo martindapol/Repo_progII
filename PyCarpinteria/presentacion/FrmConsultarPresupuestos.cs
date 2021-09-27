@@ -49,12 +49,12 @@ namespace PyCarpinteria.presentacion
             {
                 dgvResultados.Rows.Add(new object[]{
                                         oPresupuesto.PresupuestoNro,
-                                        oPresupuesto.Fecha,
+                                        oPresupuesto.Fecha.ToString("dd/MM/yyyy"),
                                         oPresupuesto.Cliente,
                                         oPresupuesto.Descuento,
                                         oPresupuesto.Total,
-                                        oPresupuesto.FechaBaja
-                 });
+                                        oPresupuesto.GetFechaBajaFormato()
+                 }); ;
             }
 
 
@@ -91,6 +91,17 @@ namespace PyCarpinteria.presentacion
         private void FrmConsultarPresupuestos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvResultados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Si el índice de la columna de la fila actual es 6: (botón Ver detalles)
+            if(dgvResultados.CurrentCell.ColumnIndex == 6)
+            {
+                int nroPresupuesto = Convert.ToInt32(dgvResultados.CurrentRow.Cells["colNro"].Value.ToString());
+                Frm_Alta_Presupuesto frm = new Frm_Alta_Presupuesto(Accion.READ, nroPresupuesto);
+                frm.ShowDialog();
+            }
         }
     }
 }

@@ -169,6 +169,7 @@ namespace PyCarpinteria.presentacion
             this.dgvResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultados.Size = new System.Drawing.Size(518, 132);
             this.dgvResultados.TabIndex = 0;
+            this.dgvResultados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResultados_CellContentClick);
             // 
             // colNro
             // 
@@ -256,7 +257,7 @@ namespace PyCarpinteria.presentacion
             this.Controls.Add(this.gbFiltros);
             this.Name = "FrmConsultarPresupuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Consultar presupuestos";
+            this.Text = "CONSULTAR PRESUPUESTOS";
             this.Load += new System.EventHandler(this.FrmConsultarPresupuestos_Load);
             this.gbFiltros.ResumeLayout(false);
             this.gbFiltros.PerformLayout();

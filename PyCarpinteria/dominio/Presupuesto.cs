@@ -51,5 +51,11 @@ namespace PyCarpinteria.dominio
 
         }
 
+        public string GetFechaBajaFormato()
+        {
+            string aux = FechaBaja.ToString("dd/MM/yyyy");
+            return aux.Equals("01/01/0001") ? "" : aux;
+        }
+
     }
 }

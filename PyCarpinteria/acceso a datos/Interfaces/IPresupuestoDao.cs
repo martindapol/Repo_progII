@@ -14,5 +14,9 @@ namespace PyCarpinteria.acceso_a_datos.Interfaces
         List<Presupuesto> GetByFilters(List<Parametro> criterios);
         List<Producto> GetProductos();
         bool Save(Presupuesto oPresupuesto);
+        int GetNextPresupuestoId();
+
+        Presupuesto GetById(int id);
+
     }
 }

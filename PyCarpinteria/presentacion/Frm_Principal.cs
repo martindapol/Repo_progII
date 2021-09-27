@@ -26,7 +26,7 @@ namespace PyCarpinteria
 
         private void nuevoPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Alta_Presupuesto frmNuevo = new Frm_Alta_Presupuesto();
+            Frm_Alta_Presupuesto frmNuevo = new Frm_Alta_Presupuesto(Accion.CREATE, 0);
             frmNuevo.ShowDialog();
         }
 
@@ -55,6 +55,15 @@ namespace PyCarpinteria
         private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FrmReporte().ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("¿Seguro que desea salir de la aplicación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==  DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+           
         }
     }
 }

@@ -11,11 +11,11 @@ using PyCarpinteria.servicios;
 
 namespace PyCarpinteria.acceso_a_datos.Implementaciones
 {
-   class PresupuestoDao : IPresupuestoDao
+    class PresupuestoDao : IPresupuestoDao
     {
-       public bool Delete(int nro)
+        public bool Delete(int nro)
         {
-           
+
             SqlConnection cnn = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = db_carpinteria; Integrated Security = True");
             SqlTransaction t = null;
             int affected = 0;
@@ -30,7 +30,7 @@ namespace PyCarpinteria.acceso_a_datos.Implementaciones
                 t.Commit();
 
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 t.Rollback();
             }
@@ -44,7 +44,7 @@ namespace PyCarpinteria.acceso_a_datos.Implementaciones
 
         }
 
-       public List<Presupuesto> GetByFilters(List<Parametro> criterios)
+        public List<Presupuesto> GetByFilters(List<Parametro> criterios)
         {
             List<Presupuesto> lst = new List<Presupuesto>();
             DataTable table = new DataTable();
@@ -72,17 +72,83 @@ namespace PyCarpinteria.acceso_a_datos.Implementaciones
                     oPresupuesto.Descuento = Convert.ToDouble(row["descuento"].ToString());
                     oPresupuesto.PresupuestoNro = Convert.ToInt32(row["presupuesto_nro"].ToString());
                     oPresupuesto.Total = Convert.ToDouble(row["total"].ToString());
+                    //validar que fecha_baja no es null:
+                    if (!row["fecha_baja"].Equals(DBNull.Value))
+                        oPresupuesto.FechaBaja = Convert.ToDateTime(row["fecha_baja"].ToString());
 
                     lst.Add(oPresupuesto);
                 }
 
                 cnn.Close();
-
             }
-            catch (SqlException ex) {
-               
+            catch (SqlException)
+            {
+                lst = null;
             }
             return lst;
+        }
+
+        public Presupuesto GetById(int id)
+        {
+            Presupuesto oPresupuesto = new Presupuesto();
+            SqlConnection cnn = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = db_carpinteria; Integrated Security = True");
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cnn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_CONSULTAR_PRESUPUESTO_POR_ID";
+            cmd.Parameters.AddWithValue("@nro", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+            bool esPrimerRegistro = true;
+
+            while (reader.Read())
+            {
+                if (esPrimerRegistro)
+                {
+                    //solo para el primer resultado recuperamos los datos del MAESTRO:
+                    oPresupuesto.PresupuestoNro = Convert.ToInt32(reader["presupuesto_nro"].ToString());
+                    oPresupuesto.Cliente = reader["cliente"].ToString();
+                    oPresupuesto.Fecha = Convert.ToDateTime(reader["fecha"].ToString());
+                    oPresupuesto.Descuento = Convert.ToDouble(reader["descuento"].ToString());
+                    oPresupuesto.PresupuestoNro = Convert.ToInt32(reader["presupuesto_nro"].ToString());
+                    oPresupuesto.Total = Convert.ToDouble(reader["total"].ToString());
+                    esPrimerRegistro = false;
+                }
+
+                DetallePresupuesto oDetalle = new DetallePresupuesto();
+                Producto oProducto = new Producto();
+                oProducto.IdProducto = Convert.ToInt32(reader["id_producto"].ToString());
+                oProducto.Nombre = reader["n_producto"].ToString();
+                oProducto.Precio = Convert.ToDouble(reader["precio"].ToString());
+                oProducto.Activo = reader["activo"].ToString().Equals("S");
+                oDetalle.Producto = oProducto;
+                oDetalle.Cantidad = Convert.ToInt32(reader["cantidad"].ToString());
+                esPrimerRegistro = false;
+                oPresupuesto.AgregarDetalle(oDetalle);
+            }
+            return oPresupuesto;
+        }
+
+        public int GetNextPresupuestoId()
+        {
+            SqlConnection cnn = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = db_carpinteria; Integrated Security = True");
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cnn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "SP_PROXIMO_ID";
+
+            SqlParameter param = new SqlParameter();
+            param.ParameterName = "@next";
+            param.SqlDbType = SqlDbType.Int;
+            param.Direction = ParameterDirection.Output;
+
+            cmd.Parameters.Add(param);
+
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            return (int)param.Value;
         }
 
         public List<Producto> GetProductos()
@@ -99,7 +165,7 @@ namespace PyCarpinteria.acceso_a_datos.Implementaciones
 
             cnn.Close();
 
-            foreach(DataRow row in table.Rows)
+            foreach (DataRow row in table.Rows)
             {
                 Producto oProducto = new Producto();
                 oProducto.IdProducto = Convert.ToInt32(row["id_producto"].ToString());

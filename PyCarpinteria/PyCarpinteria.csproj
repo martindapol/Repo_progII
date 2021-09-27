@@ -101,9 +101,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="servicios\IService.cs" />
+    <Compile Include="servicios\Interfaces\IService.cs" />
     <Compile Include="servicios\Parametro.cs" />
-    <Compile Include="servicios\PresupuestoService.cs" />
+    <Compile Include="servicios\Implementaciones\PresupuestoService.cs" />
     <Compile Include="servicios\AbstractServiceFactory.cs" />
     <Compile Include="servicios\ServiceFactoryImp.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />

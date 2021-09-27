@@ -13,35 +13,72 @@ using System.Windows.Forms;
 
 namespace PyCarpinteria.presentacion
 {
+    public enum Accion
+    {
+        CREATE,
+        READ,
+        UPDATE,
+        DELETE
+    }
+
+
     public partial class Frm_Alta_Presupuesto : Form
     {
         private IService servicio;
-
+        private Accion modo;
 
         Presupuesto oPresupuesto = new Presupuesto();
-        public Frm_Alta_Presupuesto()
+        public Frm_Alta_Presupuesto(Accion modo, int nro)
         {
-
             InitializeComponent();
             servicio = new ServiceFactoryImp().CrearService();
+            this.modo = modo;
+           
 
+            if (modo.Equals(Accion.READ))
+            {
+                gbDatosPresupuesto.Enabled = false;
+                btnAceptar.Enabled = false;
+                this.Text = "VER PRESUPUESTO";
+                this.Cargar_presupuesto(nro);
+            }
         }
 
+        private void Cargar_presupuesto(int nro)
+        {
+            this.oPresupuesto = servicio.ObtenerPresupuestoPorID(nro);
+            txtCliente.Text = oPresupuesto.Cliente;
+            txtFecha.Text = oPresupuesto.Fecha.ToString("dd/MM/yyyy");
+            txtDto.Text = oPresupuesto.Descuento.ToString();
+            lblNro.Text = "Presupuesto Nro: " + oPresupuesto.PresupuestoNro.ToString();
 
-
+            dgvDetalles.Rows.Clear();
+            foreach (DetallePresupuesto oDetalle in oPresupuesto.Detalles)
+            {
+                dgvDetalles.Rows.Add(new object[] { "", oDetalle.Producto.Nombre, oDetalle.Producto.Precio, oDetalle.Cantidad, oDetalle.CalcularSubTotal() }); ;
+            }
+            CalcularTotales();
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
 
+            if (dgvDetalles.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe ingresar al menos un producto como detalle", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboProducto.Focus();
+                return;
+            }
+
             if (txtCliente.Text.Trim() == "")
             {
-                MessageBox.Show("Debe ingresar un tipo de cliente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar un tipo de cliente", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCliente.Focus();
                 return;
             }
             if (txtDto.Text.Trim() == "")
             {
-                MessageBox.Show("Debe ingresar el porcetnaje de descuento", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe ingresar el porcetnaje de descuento", "Validaciones", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtCliente.Focus();
                 return;
             }
@@ -62,33 +99,25 @@ namespace PyCarpinteria.presentacion
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-
-
-            DialogResult result = MessageBox.Show("¿Está seguro que desea cancelar?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("¿Está seguro que desea cancelar el registro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 this.Dispose();
-
-            }
-            else
-            {
-                return;
             }
         }
 
         private void Frm_Alta_Presupuesto_Load(object sender, EventArgs e)
         {
-            CargarCombo();
-            ConsultarUltimoPresupuesto();
-
-
-            txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            txtDto.Text = "0";
-            txtCliente.Text = "CONSUMIDOR FINAL";
-
-
+            if (modo.Equals(Accion.CREATE))
+            {
+                CargarCombo();
+                ConsultarUltimoPresupuesto();
+                txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                txtDto.Text = "0";
+                txtCliente.Text = "CONSUMIDOR FINAL";
+            }
         }
 
         private void CargarCombo()
@@ -100,32 +129,13 @@ namespace PyCarpinteria.presentacion
             //valueMember y DisplayMember serán las properties de los objetos
             cboProducto.ValueMember = "IdProducto";
             cboProducto.DisplayMember = "Nombre";
-
-            // cboProducto.Items.AddRange(lst.ToArray());
+            //Otra opción: cboProducto.Items.AddRange(lst.ToArray()); 
 
         }
 
         private void ConsultarUltimoPresupuesto()
         {
-            SqlConnection cnn = new SqlConnection(@"Data Source =.\SQLEXPRESS; Initial Catalog = db_carpinteria; Integrated Security = True");
-            cnn.Open();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cnn;
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "SP_PROXIMO_ID";
-
-            SqlParameter param = new SqlParameter();
-            param.ParameterName = "@next";
-            param.SqlDbType = SqlDbType.Int;
-            param.Direction = ParameterDirection.Output;
-
-            cmd.Parameters.Add(param);
-
-            cmd.ExecuteNonQuery();
-
-            lblNro.Text = "Presupuesto Nro: " + param.Value.ToString();
-            cnn.Close();
-
+            lblNro.Text = "Presupuesto Nro: " + servicio.ObtenerProximoPresupuestoID();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -147,10 +157,6 @@ namespace PyCarpinteria.presentacion
             dgvDetalles.Rows.Add(new object[] { "", oProducto.Nombre, oProducto.Precio, item.Cantidad, item.CalcularSubTotal() }); ;
 
             CalcularTotales();
-
-
-
-
         }
 
         private bool ExisteProductoEnGrilla(string text)
@@ -175,9 +181,6 @@ namespace PyCarpinteria.presentacion
             oPresupuesto.Total = subTotal - desc;
         }
 
-
-
-
         private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvDetalles.CurrentCell.ColumnIndex == 5)
@@ -187,7 +190,5 @@ namespace PyCarpinteria.presentacion
                 CalcularTotales();
             }
         }
-
-
     }
 }
