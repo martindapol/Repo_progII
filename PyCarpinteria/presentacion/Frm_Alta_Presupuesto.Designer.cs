@@ -162,6 +162,7 @@ namespace PyCarpinteria.presentacion
             this.dgvDetalles.RowHeadersWidth = 51;
             this.dgvDetalles.Size = new System.Drawing.Size(515, 150);
             this.dgvDetalles.TabIndex = 23;
+            this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick);
             // 
             // detalle
             // 
@@ -222,6 +223,7 @@ namespace PyCarpinteria.presentacion
             this.btnAgregar.TabIndex = 22;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // cboProducto
             // 
