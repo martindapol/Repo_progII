@@ -1,0 +1,120 @@
+C:\Users\MARTIN\source\repos\PyCarpinteria\bin\Debug\PyCarpinteria.exe.config
+C:\Users\MARTIN\source\repos\PyCarpinteria\bin\Debug\PyCarpinteria.exe
+C:\Users\MARTIN\source\repos\PyCarpinteria\bin\Debug\PyCarpinteria.pdb
+C:\Users\MARTIN\source\repos\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.AssemblyReference.cache
+C:\Users\MARTIN\source\repos\PyCarpinteria\obj\Debug\PyCarpinteria.Form1.resources
+C:\Users\MARTIN\source\repos\PyCarpinteria\obj\Debug\PyCarpinteria.Properties.Resources.resources
+C:\Users\MARTIN\source\repos\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.GenerateResource.cache
+C:\Users\MARTIN\source\repos\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.CoreCompileInputs.cache
+C:\Users\MARTIN\source\repos\PyCarpinteria\obj\Debug\PyCarpinteria.exe
+C:\Users\MARTIN\source\repos\PyCarpinteria\obj\Debug\PyCarpinteria.pdb
+C:\Users\MARTIN\source\repos\PyCarpinteria\obj\Debug\PyCarpinteria.presentacion.Frm_Alta_Presupuesto.resources
+D:\TUP\PROGRAMACION II\PyCarpinteria\bin\Debug\PyCarpinteria.exe.config
+D:\TUP\PROGRAMACION II\PyCarpinteria\bin\Debug\PyCarpinteria.exe
+D:\TUP\PROGRAMACION II\PyCarpinteria\bin\Debug\PyCarpinteria.pdb
+D:\TUP\PROGRAMACION II\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.AssemblyReference.cache
+D:\TUP\PROGRAMACION II\PyCarpinteria\obj\Debug\PyCarpinteria.presentacion.Frm_Alta_Presupuesto.resources
+D:\TUP\PROGRAMACION II\PyCarpinteria\obj\Debug\PyCarpinteria.Form1.resources
+D:\TUP\PROGRAMACION II\PyCarpinteria\obj\Debug\PyCarpinteria.Properties.Resources.resources
+D:\TUP\PROGRAMACION II\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.GenerateResource.cache
+D:\TUP\PROGRAMACION II\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.CoreCompileInputs.cache
+D:\TUP\PROGRAMACION II\PyCarpinteria\obj\Debug\PyCarpinteria.exe
+D:\TUP\PROGRAMACION II\PyCarpinteria\obj\Debug\PyCarpinteria.pdb
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\bin\Debug\PyCarpinteria.exe.config
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\bin\Debug\PyCarpinteria.exe
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\bin\Debug\PyCarpinteria.pdb
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.AssemblyReference.cache
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.presentacion.FrmConsultarPresupuestos.resources
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.presentacion.Frm_Alta_Presupuesto.resources
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.Form1.resources
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.Properties.Resources.resources
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.GenerateResource.cache
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.CoreCompileInputs.cache
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.exe
+C:\Users\marti\Desktop\PyCarpinteria 2508\PyCarpinteria\obj\Debug\PyCarpinteria.pdb
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\PyCarpinteria.exe.config
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\PyCarpinteria.exe
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\PyCarpinteria.pdb
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\EnvDTE.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\stdole.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\Microsoft.MSXML.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-HANS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-HANT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-HANS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-HANT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-HANS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-HANT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.presentacion.FrmConsultarPresupuestos.resources
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.presentacion.FrmReporte.resources
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.presentacion.Frm_Alta_Presupuesto.resources
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.Form1.resources
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.Properties.Resources.resources
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.GenerateResource.cache
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\RdlCompile.cache
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\RdlCompile.compiled
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.CoreCompileInputs.cache
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.CopyComplete
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.exe
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.pdb
+C:\Users\marti\Documents\Repos\Repo_progII\PyCarpinteria\obj\Debug\PyCarpinteria.csproj.AssemblyReference.cache

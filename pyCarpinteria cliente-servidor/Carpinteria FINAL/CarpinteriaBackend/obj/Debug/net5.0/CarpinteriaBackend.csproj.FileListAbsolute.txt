@@ -1,0 +1,12 @@
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\obj\Debug\net5.0\CarpinteriaBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\obj\Debug\net5.0\CarpinteriaBackend.AssemblyInfoInputs.cache
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\obj\Debug\net5.0\CarpinteriaBackend.AssemblyInfo.cs
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\obj\Debug\net5.0\CarpinteriaBackend.csproj.CoreCompileInputs.cache
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\bin\Debug\net5.0\CarpinteriaBackend.deps.json
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\bin\Debug\net5.0\CarpinteriaBackend.dll
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\bin\Debug\net5.0\ref\CarpinteriaBackend.dll
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\bin\Debug\net5.0\CarpinteriaBackend.pdb
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\obj\Debug\net5.0\CarpinteriaBackend.dll
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\obj\Debug\net5.0\ref\CarpinteriaBackend.dll
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\obj\Debug\net5.0\CarpinteriaBackend.pdb
+C:\Users\marti\Documents\UTN\TUP_PROGII\Carpinteria FINAL\CarpinteriaBackend\obj\Debug\net5.0\CarpinteriaBackend.csproj.AssemblyReference.cache
